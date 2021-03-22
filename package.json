@@ -81,6 +81,7 @@
       "yarn run type-check",
       "eslint --fix \"src/**/*.{ts,tsx}\"",
       "eslint \"src/**/*.{ts,tsx}\"",
+      "yarn test",
       "git add"
     ]
   },
