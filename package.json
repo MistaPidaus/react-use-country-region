@@ -18,9 +18,13 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c && tsc -d --emitDeclarationOnly --noEmit false --declarationDir dist",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "type-check": "tsc --pretty --noEmit --skipLibCheck",
+    "precommit": "lint-staged",
+    "commit": "clear && git-cz"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -29,6 +33,8 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/runtime": "^7.3.1",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
@@ -49,6 +55,9 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gh-pages": "^2.0.1",
+    "git-cz": "^4.7.6",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "react": "^16.9.0",
     "react-scripts": "^3.4.0",
@@ -56,6 +65,26 @@
     "rollup": "^2.26.9",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "tslib": "^2.0.1",
-    "typescript": "^3.2.4"
+    "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "prettier --config .prettierrc --write",
+      "yarn run type-check",
+      "eslint --fix \"src/**/*.{ts,tsx}\"",
+      "eslint \"src/**/*.{ts,tsx}\"",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
