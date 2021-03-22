@@ -26,7 +26,9 @@
     "precommit": "lint-staged",
     "commit": "clear && git-cz"
   },
-  "dependencies": {},
+  "dependencies": {
+    "country-region-data": "^1.7.0"
+  },
   "peerDependencies": {
     "react": "^16.9.0"
   },
