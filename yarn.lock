@@ -3690,6 +3690,11 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
+country-region-data@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/country-region-data/-/country-region-data-1.7.0.tgz#468e4e9b3e8e1b14d3d60de132595a5294e10e7d"
+  integrity sha512-h+foR9mTzEuUwnaaWVbtcX9Ac+X+aW9CwlbzsJFZR76J2DxpLN/lcLgSgI8HeOKvbxe7K+/PlERAub+twtIGHQ==
+
 create-ecdh@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.4.tgz#d6e7f4bffa66736085a0762fd3a632684dabcc4e"
