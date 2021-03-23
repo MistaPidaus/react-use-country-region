@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-use-country-region/static/css/main.2c6a48fe.chunk.css",
+    "main.js": "/react-use-country-region/static/js/main.5bed7d21.chunk.js",
+    "main.js.map": "/react-use-country-region/static/js/main.5bed7d21.chunk.js.map",
+    "runtime-main.js": "/react-use-country-region/static/js/runtime-main.deb41cf3.js",
+    "runtime-main.js.map": "/react-use-country-region/static/js/runtime-main.deb41cf3.js.map",
+    "static/js/2.1d170705.chunk.js": "/react-use-country-region/static/js/2.1d170705.chunk.js",
+    "static/js/2.1d170705.chunk.js.map": "/react-use-country-region/static/js/2.1d170705.chunk.js.map",
+    "index.html": "/react-use-country-region/index.html",
+    "precache-manifest.6d67c8731b4fbb02f26daced7be8588b.js": "/react-use-country-region/precache-manifest.6d67c8731b4fbb02f26daced7be8588b.js",
+    "service-worker.js": "/react-use-country-region/service-worker.js",
+    "static/css/main.2c6a48fe.chunk.css.map": "/react-use-country-region/static/css/main.2c6a48fe.chunk.css.map",
+    "static/js/2.1d170705.chunk.js.LICENSE.txt": "/react-use-country-region/static/js/2.1d170705.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.deb41cf3.js",
+    "static/js/2.1d170705.chunk.js",
+    "static/css/main.2c6a48fe.chunk.css",
+    "static/js/main.5bed7d21.chunk.js"
+  ]
+}
