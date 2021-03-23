@@ -1,8 +1,6 @@
 import { Country } from 'country-region-data';
 
-export interface useCountryRegionProps {
-  countryCode: string | null | undefined;
-}
+export type CountryRegionProp = string | null | undefined;
 
 export interface useCountryRegionOutputProps {
   result: CountryState;

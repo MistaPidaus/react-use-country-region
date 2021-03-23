@@ -11,7 +11,7 @@ afterEach(() => {
 
 describe('useCountryRegion Tests', () => {
   it('should list all country', () => {
-    const { result } = renderHook(() => useCountryRegion({ countryCode: null }));
+    const { result } = renderHook(() => useCountryRegion());
 
     const countries = result.current.getCountryList();
 
@@ -19,7 +19,7 @@ describe('useCountryRegion Tests', () => {
   });
 
   it('should display a correct result', () => {
-    const { result: data } = renderHook(() => useCountryRegion({ countryCode: 'MY' }));
+    const { result: data } = renderHook(() => useCountryRegion('MY'));
 
     expect(data.current.result?.countryShortCode).toBe('MY');
     expect(data.current.result?.regions.length).toBeGreaterThanOrEqual(1);
@@ -27,7 +27,7 @@ describe('useCountryRegion Tests', () => {
 
   it('should display result on value change', () => {
     let country = '';
-    const { result: data, rerender } = renderHook(() => useCountryRegion({ countryCode: country }));
+    const { result: data, rerender } = renderHook(() => useCountryRegion(country));
 
     expect(data.current.result).toBe(null);
     expect(data.current.result?.countryShortCode).toBe(undefined);
@@ -39,14 +39,19 @@ describe('useCountryRegion Tests', () => {
     expect(data.current.result?.regions.length).toBeGreaterThanOrEqual(1);
   });
 
+  it('result should return undefined or null if no param pass', () => {
+    const { result: data } = renderHook(() => useCountryRegion());
+    expect(data.current.result).toBeNull();
+  });
+
   it('should throw an error if invalid country ISO code', () => {
-    expect(() => renderHook(() => useCountryRegion({ countryCode: 'MYR' }))).toThrow(
+    expect(() => renderHook(() => useCountryRegion('MYR'))).toThrow(
       new Error('"countryCode" must be have 2 letter ISO country code')
     );
   });
 
   it('should throw an error if unsupported/non-existence country ISO code', () => {
-    expect(() => renderHook(() => useCountryRegion({ countryCode: 'TY' }))).toThrow(
+    expect(() => renderHook(() => useCountryRegion('TY'))).toThrow(
       new RegExp('does not supported or not exists')
     );
   });
